@@ -17,18 +17,20 @@ public final class Filters {
     public static boolean filter(SongData col, String value, Song song, Operations oper) {
         switch(col) {
             case TITLE:
-
-                return stringFilter(song.getTitle(), value, oper);
+                return filterString(song.getTitle(), oper, value);
+            case GENRE:
+                return filterString(song.getGenre(), oper, value);
             case ARTIST:
-                return song.getArtist().equalsIgnoreCase(value);
+                return filterString(song.getArtist(), oper, value);
             case YEAR:
+                return filterNumber(song.getYear(), oper, value);
             default:
                 return false;
         }
 
     }
 
-    public static boolean stringFilter(String songValue, String value, Operations oper) {
+    public static boolean filterString(String songValue, Operations oper,String value) {
         switch(oper) {
             case EQUALS:
                 return songValue.equalsIgnoreCase(value);
