@@ -32,7 +32,7 @@ public class ArgController implements Controller {
     public void parseArgs(String[] args) {
         List<String> argList = new ArrayList<>(Arrays.asList(args));
         parseHelpFlag(argList);
-        parseOutputFlag(argList);
+        //parseOutputFlag(argList);
         parseInputFlag(argList);
         parseOutformatFlag(argList);
         if (argList.size() > 0) {
@@ -76,15 +76,7 @@ public class ArgController implements Controller {
     }
 
     private void parseOutputFlag(List<String> argList) {
-        if (argList.contains(OUTPUT_FLAG)) {
-            outputLocation = check_and_get_next(OUTPUT_FLAG, argList);
-            argList.remove(OUTPUT_FLAG);
-            argList.remove(outputLocation);
-        } else if (argList.contains(OUTPUT_FLAG_LONG)) {
-            outputLocation = check_and_get_next(INPUT_FLAG, argList);
-            argList.remove(OUTPUT_FLAG_LONG);
-            argList.remove(outputLocation);
-        }
+        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     private void parseInputFlag(List<String> argList) {

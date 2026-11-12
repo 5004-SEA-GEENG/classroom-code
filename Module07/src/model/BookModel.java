@@ -19,7 +19,7 @@ public interface BookModel {
     }
 
     static BookModel getInstance(String filename) {
-        return  new Library(filename);
+        return new Library(filename);
     }
 
     static void write(Collection<BookRecord> books, OutputStream out, Format format) {
